@@ -1,13 +1,13 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <a-button type="primary">antd btn</a-button>
+  <a-button type="primary">antd btn</a-button> -->
+  <router-link to="/">Home</router-link><br />
+  <router-link to="/draw">Draw</router-link> <br />
+  <router-link to="/detail/11">Detail</router-link><br />
+  <router-view></router-view>
 </template>
 
 <style>

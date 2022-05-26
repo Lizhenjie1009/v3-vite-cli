@@ -17,5 +17,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint', 'prettier'],
-  rules: {}
+  rules: {
+    'vue/multi-word-component-names': 0 // 驼峰报错-横线
+  }
 }
