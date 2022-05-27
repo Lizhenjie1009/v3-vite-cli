@@ -10,8 +10,8 @@ const route = useRoute()
 console.log(route)
 </script>
 
-<!-- <script>
+<script lang="ts">
 export default {
   name: 'Detail'
 }
-</script> -->
+</script>
