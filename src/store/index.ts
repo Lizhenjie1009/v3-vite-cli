@@ -1,3 +1,4 @@
+import { Item } from 'ant-design-vue/lib/menu'
 import { createStore } from 'vuex'
 /**
  * ts：自动补全，类型检查
@@ -35,9 +36,27 @@ const store = createStore<GlobalDataProps>({
       isLogin: false
     }
   },
+  getters: {
+    getUserLogin1: state => state.user.isLogin,
+    getUserLogin(state) {
+      return state.user.isLogin
+    },
+    getTemplateById1: state => (id: number) =>
+      state.templates.find(item => item.id === id),
+    getTemplateById(state) {
+      return (id: number) => {
+        return state.templates.find(item => item.id === id)
+      }
+    }
+  },
   mutations: {
-    editIsLogin(state, bool) {
-      state.user.isLogin = bool
+    editIsLogin(state, name) {
+      // state.user.userName = name
+      state.user = { ...state.user, isLogin: true, userName: name }
+    },
+    logout(state) {
+      // state.user.isLogin = false
+      state.user = { isLogin: false }
     }
   }
 })

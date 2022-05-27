@@ -1,14 +1,15 @@
-<script setup lang="ts"></script>
-
 <template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <a-button type="primary">antd btn</a-button> -->
+  <user-profile />
+
   <router-link to="/">Home</router-link><br />
   <router-link to="/draw">Draw</router-link> <br />
   <router-link to="/detail/11">Detail</router-link><br />
   <router-view></router-view>
 </template>
+
+<script setup lang="ts">
+import UserProfile from './components/UserProfile.vue'
+</script>
 
 <style>
 #app {
