@@ -1,5 +1,6 @@
-import { Item } from 'ant-design-vue/lib/menu'
 import { createStore } from 'vuex'
+import options, { OptionsState } from './options'
+
 /**
  * ts：自动补全，类型检查
  */
@@ -14,10 +15,17 @@ export interface TemplateProps {
   author: string
   copiedCount: number
 }
-// 声明store中的state类型
+// 声明store根中的state类型
+export interface RootState {
+  user: UserProps
+  templates: TemplateProps[]
+}
+
+// 声明全局store的state类型
 export interface GlobalDataProps {
   user: UserProps
   templates: TemplateProps[]
+  options: OptionsState
 }
 
 const testData: TemplateProps[] = [
@@ -29,7 +37,7 @@ const testData: TemplateProps[] = [
   { id: 6, title: '6', coverImg: '6', author: '6', copiedCount: 6 }
 ]
 
-const store = createStore<GlobalDataProps>({
+const store = createStore<RootState>({
   state: {
     templates: testData,
     user: {
@@ -58,6 +66,9 @@ const store = createStore<GlobalDataProps>({
       // state.user.isLogin = false
       state.user = { isLogin: false }
     }
+  },
+  modules: {
+    options
   }
 })
 

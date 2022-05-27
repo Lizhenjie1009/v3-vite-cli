@@ -25,4 +25,5 @@ let editIsLogin = () => {
 
 console.log('getters-login-status', store.getters.getUserLogin1)
 console.log('getters-tmplateById-fn', template.value.title)
+console.log('store-modules', store.state.options.o1)
 </script>
