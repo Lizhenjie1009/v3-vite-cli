@@ -1,6 +1,6 @@
 import { Module } from 'vuex'
 import { GlobalDataProps } from './index'
-interface OptionsState {
+export interface OptionsState {
   o1: string
 }
 
